@@ -99,29 +99,9 @@ $(document).ready(function () {
     });
   }
 
-  // Project Slider
-  const $slides = $(".slide");
-  const $prevBtn = $(".prev");
-  const $nextBtn = $(".next");
-  let currentIndex = 0;
 
-  function showProjectSlide(index) {
-    $slides.removeClass("active").eq(index).addClass("active");
-  }
 
-  $prevBtn.on("click", function () {
-    currentIndex = (currentIndex === 0) ? $slides.length - 1 : currentIndex - 1;
-    showProjectSlide(currentIndex);
-  });
 
-  $nextBtn.on("click", function () {
-    currentIndex = (currentIndex === $slides.length - 1) ? 0 : currentIndex + 1;
-    showProjectSlide(currentIndex);
-  });
-
-  setInterval(() => {
-    $nextBtn.click();
-  }, 5000);
 
   // Certificate Slider
   const certSlides = document.querySelectorAll(".certificate-slide");

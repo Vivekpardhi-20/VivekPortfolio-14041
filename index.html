@@ -54,7 +54,7 @@
             
             <div class="btn-group">
                 <a href="./resources/VivekResume.pdf" class="btn   active">Download CV</a>
-                <a href="mailto:pardhivivek82@gmail.com" class="btn">Contact</a>
+                <!-- <a href="mailto:pardhivivek82@gmail.com" class="btn">Contact</a> -->
             </div>
 
             <div class="social">
@@ -169,7 +169,7 @@
 
 
 
-        <!-------------------------- Projects -------------------------->
+ <!-------------------------- Projects -------------------------->
  <section class="project-content" id="projects">
   <div class="container">
     <div class="project-title">
@@ -284,6 +284,40 @@
     <small class="message">Thanks for visiting and happy coding!</small>
     <small class="copyright">&copy; Copyright 2023. All rights reserved.</small>
    </footer>
+
+   <!-- jQuery (include this in your <head> or before your custom script) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Slideshow Script -->
+<script>
+  $(document).ready(function () {
+    const $slides = $('.slide');
+    const $prevBtn = $('.prev');
+    const $nextBtn = $('.next');
+    let currentIndex = 0;
+    let totalSlides = $slides.length;
+
+    function showSlide(index) {
+      $slides.removeClass('active').eq(index).addClass('active');
+    }
+
+    $prevBtn.on('click', () => {
+      currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+      showSlide(currentIndex);
+    });
+
+    $nextBtn.on('click', () => {
+      currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+      showSlide(currentIndex);
+    });
+
+    // Auto slide every 5 seconds
+    setInterval(() => {
+      $nextBtn.click();
+    }, 5000);
+  });
+</script>
+
 
    
 </body>
